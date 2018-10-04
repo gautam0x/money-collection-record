@@ -1,0 +1,275 @@
+@charset "utf-8";
+
+
+/*--Import Stylish fonts--*/
+@import "custom_font/rules.css";
+
+
+/**************************************************
+Basic form style to take data as input
+
+--> table structre formatting to hold basic forum
+--> Table to display index
+--> Table structure inside header
+****************************************************/
+
+/*****************************
+--> Forum Holder Table
+******************************/
+.forum-holder-table
+{
+	border-collapse: collapse;
+    text-align: left;
+}
+.forum-holder-table tr
+{
+	border-collapse: collapse;
+}
+.forum-holder-table tr td
+{
+    padding: 4px 6px;
+}
+.forum-medium-input label
+{
+    color:#0b090a;
+	font-size: 16px;
+	font-family:"comic sans ms";
+    font-weight: 700;
+}
+.forum-medium-input select
+{
+    padding:3px 5px;
+    background-color:#f5eff2;
+    border:1px solid #b6afaf;
+    border-radius: 1px;
+    font-weight: 600;
+    color:#2f4f4f;
+}
+.forum-medium-input input[type="text"] , .forum-medium-input input[type="number"] , .forum-medium-input input[type="password"]
+{
+    width:96%;
+    padding: 6px 5px;
+    border:1px solid #b6afaf;
+    border-radius: 1px;
+    background-color:#f5eff2;
+    font-weight: 800;
+    color:#2f4f4f ;
+}
+.forum-medium-input input[type="text"]:focus , .forum-medium-input input[type="number"]:focus  , .forum-medium-input input[type="password"]:focus 
+{
+    background-color:#f7f7f7;
+    border: 1px solid #990099;
+}
+.forum-medium-input input[type="submit"]
+{
+    width: 101%;
+    padding: 6px 5px;
+    margin: 15px 0px;
+    background-color: #73264d;
+    border:1px solid #4d1933;
+    border-radius: 1px;
+    color: #fafafa;
+    font-weight: 900;
+    font-size: 17px;
+}
+.forum-medium-input input[type="submit"]:hover
+{
+    background-color:#602040;
+    box-shadow: 0px 0px 5px 0px #602040;
+}
+
+
+
+/*****************************************
+--> Table For Index The Data
+******************************************/
+.index-table
+{
+	border-collapse: collapse;
+}
+.index-table tr
+{
+	border-collapse: collapse;
+}
+.index-table tr th
+{
+    padding: 10px 8px;
+	background-color:#5f194f;
+    background-image: linear-gradient(0deg ,#5f194f,#511543);
+	text-align:left;
+	font-size: 17px;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	color: #E4E4E4;
+}
+.index-table tr td
+{
+    padding: 10px 10px;
+	text-align:left;
+    font-family:sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    color:#2f2f2f;
+}
+.index-table tr td a
+{
+    color:#651b7e;
+    font-family: monospace;
+}
+.index-table * a.link-as-button
+{
+    display:inline-block;
+    padding: 4px 15px;
+	text-align:center;
+    background-color:  #73264d;
+    background-image: linear-gradient(0deg,#73264d,#862d59);
+    border:1px solid #4d1933;
+    border-radius: 4px;
+    color:#F5F5DC;
+    font-weight: 600;
+}
+.index-table * a.link-as-button:hover
+{
+    background-color:  #73264d;
+    background-image: linear-gradient(45deg,#73264d,#c6538c);
+}
+.index-table * input
+{
+    width: 90px;
+    padding: 4px 5px;
+    border:1px solid #b6afaf;
+    background-color:#f5eff2;
+    border-radius: 4px;
+	text-align:left;
+    font-family:sans-serif;
+    font-weight: 700;
+    color:#5e5559;
+}
+.index-table * input[type="submit"]
+{
+    padding: 4px 2px;
+    border:1px solid #4d1933;
+    border-radius: 4px;
+    background-color:  #73264d;
+    background-image: linear-gradient(0deg,#73264d,#862d59);
+	text-align:center;
+    color:#F5F5DC;
+    font-weight: 800;
+
+}
+.index-table * input[type="submit"]:hover
+{
+    background-color:  #73264d;
+    background-image: linear-gradient(45deg,#73264d,#c6538c);
+}
+.index-table tr.type_1 td
+{
+	background-color:#d9d9d9;
+}
+.index-table tr.type_2 td
+{
+	background-color:#cfcfcf;
+}
+.index-table tr.type_1:hover td , .index-table tr.type_2:hover td
+{
+	background-color: #efeeff;
+}
+.index-table tr.sucess-msg-row td
+{
+    border:2px solid #caefbe;
+    background-color:#cae9be;
+    color:#2f5515;
+}
+.index-table tr.failure-msg-row td
+{
+    background-color:#f0dbdb;
+    color:#b84947;
+}
+
+/*************************************
+--> Table layout inside website header
+**************************************/
+.basic-transparent-table
+{
+    border-collapse: collapse;
+    text-align: left;
+    color: #d9d9d9;
+}
+.basic-transparent-table tr
+{
+    border-collapse: collapse;
+}
+.basic-transparent-table tr th
+{
+    padding: 10px 10px;
+    border-bottom:2px solid #d9d9d9;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+}
+.basic-transparent-table tr td
+{
+    padding: 4px 8px;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+}
+.basic-transparent-table tr td input[type="text"]
+{
+    padding: 2px 5px;
+    border:1px solid #b6afaf;
+    border-radius: 5px;
+	background-color:#ebe0e8;
+}
+.basic-transparent-table tr td input[type="submit"]
+{
+    padding: 3px 5px;
+    border:1px solid #af2281;
+    border-radius: 5px;
+    background-color:#aa2281;
+	background-image: linear-gradient(0deg,#992281,#a82281);
+	color:#ffffff;
+	font-family:sans-serif;
+	font-weight:800;
+}
+.basic-transparent-table tr td a
+{
+    width: 100%;
+    display:inline-block;
+    padding: 2px;
+    color:#4da6ff;
+    font-family:monospace;
+    text-align:center;
+    font-size: 16px;
+}
+
+
+/******************************************
+--> Date Forum dropdown holder
+*******************************************/
+.date-dropdown-option-holder
+{
+    margin-bottom: 15px;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align:right;
+}
+.date-dropdown-option-holder * select
+{      
+    padding:3px 5px;
+    background-color:#f5eff2;
+    border:1px solid #b6afaf;
+    border-radius: 3px;
+    font-weight: 600;
+    color:#2f4f4f;
+    font-size: 14px;
+}
+.date-dropdown-option-holder * input[type="submit"]
+{ 
+    padding:4px 15px;
+    background-color: #73264d;
+    border:1px solid #4d1933;
+    border-radius: 3px;
+    color: #fafafa;
+    font-weight: 900;
+    font-size: 14px;
+}

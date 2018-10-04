@@ -1,0 +1,231 @@
+@charset "utf-8";
+
+
+/*--Import Stylish fonts--*/
+@import "custom_font/rules.css";
+
+/************************************************************
+This stylesheet contains 
+
+--> Body Layout Structure
+--> Header Design
+--> Footer Design
+--> Content area design , width-assign & set-to-center
+--> Container Box
+
++-----------------------+
+| Additional Components |
++-----------------------+
+|---> Alert box Design
+
+*************************************************************/
+
+
+body
+{
+	background-color:#e6e6e6;
+	color:#aaaaaa;
+	margin: 0;
+	padding: 0;
+}
+a
+{
+	text-decoration:none;
+}
+
+/********************************
+--> Body Layout Wrapper
+********************************/
+.main-container-outer-wrapper
+{
+	width: 1020px;
+	margin:15px auto 5px auto;
+}
+
+.main-container-inner-wrapper
+{
+	color:#222222;
+}
+
+/********************************
+--> Header Design
+********************************/
+.header-wrapper
+{
+    width: auto;
+	margin :0;
+	padding :0;
+}
+
+.header
+{
+    padding: 20px 60px;
+	background-color:#551141;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	text-align: center;
+}
+.header-body
+{
+    /*--No Assign--*/
+}
+
+/********************************
+--> Footer Design
+********************************/
+.footer-wrapper
+{
+    width: auto;
+	margin :0;
+	padding :0;
+}
+
+.footer
+{
+    padding: 20px 20px;
+    border-top: 8px solid #4d0026;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+	background-color:#551141;
+    text-align: left;
+	font-size: 17px;
+    color: #fcfcfc;
+}
+
+/********************************
+--> Content Area 
+********************************/
+.content-area-wrapper
+{
+    width: auto;
+	margin :0;
+	padding :0;
+}
+.content-area
+{	
+    background-color:#d4d4d4;
+    background-image: url('../image/rupee.jpg');
+    margin: 0 auto;
+	padding:20px 25px;
+    text-align:center;
+}
+
+/*--Background Image in content area--*/
+.user-login-background
+{
+    background-image: url('../image/user-login.gif');
+    background-repeat: no-repeat;
+    background-position: 90% 70%;
+    background-size: 120px;
+}
+
+/*---Width fix of content holder---*/
+.content-holder-min-width
+{
+    width: 500px;
+    margin: 0 auto;
+}
+.content-holder-max-width
+{
+    width: 960px;
+    margin: 0 auto;
+}
+
+/********************************
+--> Container Box
+*********************************/
+.container-box-wrapper
+{
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+}
+.container-box-header
+{
+    padding: 14px 50px;
+    background-color: #4d0026;
+    font-size: 22px;
+    font-weight: bold;
+    color: #F0F8FF;
+    text-align: left;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+}
+.container-box-body
+{
+    background-color:#d9d9d9;
+    background-image: linear-gradient(-45deg,#e7e4e4,#d9d9d9);
+    padding: 20px 20px;
+    box-shadow: 0px 0px 10px 0px #a8a8a8;
+}
+.background-disable
+{
+    background-color:transparent;
+}
+
+.container-box-link-bar
+{
+    padding:0px 30px;
+    background-color:transparent;
+    color: #F0F8FF;
+    text-align:right;
+}
+.container-box-link-bar a
+{
+    width: 150px;
+    background-color:#7f1a4d;
+    background-image: linear-gradient(0deg, #941e59,#6a1640);
+    margin: 0px -1px;
+    padding:10px 20px;
+    display: inline-block;
+    color: #ffffff;
+    text-align: left;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+.container-box-link-bar a.active , .container-box-link-bar a.active:hover
+{
+    background-color:#d9d9d9;
+    background-image: linear-gradient(0deg, #d9d9d9,#b3b3b3);
+    padding-top:16px;
+    color: #4d0026;
+}
+.container-box-link-bar a:hover
+{
+    background-color:#941e59;
+    background-image: linear-gradient(90deg,#7f1a4d, #941e59);
+}
+
+/***************************
+--> Alert Box Design
+****************************/
+.sucess-msg-alert
+{
+    border:2px solid #afd491;
+    border-radius: 6px;
+    padding: 3px 0px;
+    margin: 10px 30px;
+    background-color:#d6e9c6;
+    color:#2f5515;
+    font-family:cursive;
+    font-weight: 400;
+}
+.warning-msg-alert
+{
+    background-color:#d6e9c6;
+    padding: 6px 0px;
+    color:#3c763d;
+    border:2px solid #afd491;
+    border-radius: 6px;
+    font-family: sans-serif;
+}
+.failure-msg-alert
+{
+    padding: 3px 0px;
+    margin: 10px 30px;
+    border:2px solid #ebccd1;
+    border-radius: 6px;
+    background-color:#f0dbdb;
+    color:#b84947;
+    font-family:cursive;
+    font-weight: 400;
+}

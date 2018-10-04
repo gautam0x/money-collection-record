@@ -1,0 +1,22 @@
+
+@charset "utf-8";
+
+/******************************************
+------- Some User Defined fonts ----------
+Font files are storeed in this directory
+*******************************************/
+
+@font-face {
+  font-family: 'XpressiveRegular';
+  src: url('XpressiveRegular.ttf');
+}
+
+@font-face {
+  font-family: 'ScreamReal';
+  src: url('ScreamReal.otf');
+}
+
+@font-face {
+  font-family: 'Chunkfive';
+  src: url('ScreamReal.otf');
+}
