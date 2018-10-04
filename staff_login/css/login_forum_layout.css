@@ -1,0 +1,87 @@
+
+@charset "utf-8";
+
+
+/*--Import Stylish fonts--*/
+@import "custom_font/rules.css";
+
+/******************************************************
+--> (login forum holder) is 'div class' to hold form 
+--> (login forum) is 'forum class' to design input box
+--> (link button) class display anchor tag as a button
+*******************************************************/
+
+.login-forum-holder
+{
+    width: 280px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.login-forum > *
+{
+    display: block;
+    padding: 0;
+    border:none;
+}
+
+.login-forum > input[type="text"] , .login-forum > input[type="password"]
+{
+    width:260px;
+    padding: 12px 8px;
+    margin: 10px 0px;
+    border:1px solid #73264d;
+    background-color:#ddd5d5;
+    border-radius: 5px;
+    font-family: courier;
+    font-weight: 600;
+    font-size: 16px;
+    color: #2f4f4f;
+}
+
+.login-forum input[type="submit"]
+{
+    width: 280px;
+    padding: 12px 0px;
+    margin: 15px 0px;
+    border:1px solid #4d1933;
+    border-radius: 5px;
+    background-color:  #73264d;
+    color:#fafafa;
+    font-weight: 900;
+    font-size: 17px;
+}
+
+.login-forum input[type="submit"]:hover
+{
+    background-color:#521433;
+}
+
+.login-forum > label
+{
+    margin: 5px 0px;    
+    text-align: left;
+    color:#696969;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: monospace;
+}
+
+.link-button-style
+{
+    display: block;
+    padding: 5px 0px;
+    border:1px solid #4d1933;
+    border-radius: 2px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 500;
+    text-align: center;
+    color: #73264d;
+}
+
+.link-button-style:hover
+{
+    background-color: #73264d;
+    color: #e3e3e3;
+}

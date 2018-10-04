@@ -38,7 +38,7 @@ cookie 	"username" = False
 
 Redirect the url to login page 
 ***********************************************************************/
-elseif(!isset($_COOKIE['username']) && $_SERVER['PHP_SELF'] != "/collection-money/login.php" )
+elseif(!isset($_COOKIE['username']) && $_SERVER['PHP_SELF'] != "/collection_money/login.php" )
 {
 	header('location:login.php');
 }

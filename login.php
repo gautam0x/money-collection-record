@@ -87,7 +87,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['username']) && isset($_
                     <input type="Submit" value="login"/>
                 </form>
             
-                <a class="link-button-style" href="#">Employee login</a>
+                <a class="link-button-style" href="staff_login">Staff login</a>
             </div>
         </div>
 

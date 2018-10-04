@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+
+/*--Import Stylish fonts--*/
+@import "custom_font/rules.css";
+
+.navbar-wrapper
+{
+	width: auto;
+	margin :0;
+	padding :0px;
+}
+
+.navbar
+{
+	background-color:#551141;
+	border-bottom: 5px solid #4d0026;
+	padding :0px 20px;
+}
+
+.navbar ul 
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.navbar ul li 
+{
+    float: left;
+}
+
+.navbar ul li a 
+{
+    display: block;
+    padding: 14px 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #fcfcfc;
+    font-size: 19px;
+    font-family: XpressiveRegular;
+}
+
+.navbar ul li a:hover 
+{
+    background-color: #6D0038;
+}
+
+.navbar ul li a.active
+{
+	background-color: #4d0026;
+	color: #fdfdfd;
+	font-weight: bold;
+}
