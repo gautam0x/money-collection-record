@@ -156,6 +156,7 @@
         </th>
     </tr>
     <?php
+        // fetch date and amount of indivisual table
         $table_name = find_indivisual_table_name($name,$id);
         $sql = "SELECT date,amount FROM $table_name";
         $result = $conn->query($sql);

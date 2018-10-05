@@ -42,7 +42,7 @@ else if(!isset($_SESSION['date_day']) && !isset($_SESSION['date_day']) && !isset
 $date_day		= $_SESSION['date_day'];
 $date_month		= $_SESSION['date_month'];
 $date_year		= $_SESSION['date_year'];
-$date_session = $date_year."-".$date_month."-".$date_day;
+$date_session 	= $date_year."-".$date_month."-".$date_day;
 ?>
 
 
