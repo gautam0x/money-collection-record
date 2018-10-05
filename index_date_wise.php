@@ -163,6 +163,13 @@ $date = $date_year."-".$date_month."-".$date_day;
             </select>
             <input type="submit" value="Change Date"/>
             </form>
+            
+            <form  action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <input type="hidden" name="day" value="<?php echo date('d') ?>" />
+            <input type="hidden" name="month" value="<?php echo date('m') ?>" />
+            <input type="hidden" name="year" value="<?php echo date('Y') ?>" />
+            <input type="submit" value="Reset date"/>
+            </form>
             </div>
 
             <table class="index-table" width="100%">
