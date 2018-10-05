@@ -1,0 +1,110 @@
+/********************************
+--> Default Parameters
+********************************/
+body
+{
+	margin: 0;
+	padding:0;
+    background-color: #f2f2f2;
+}
+a
+{
+	text-decoration:none;
+}
+
+/********************************
+--> Page Wrapper
+********************************/
+.page-outer-wrapper
+{
+	width: 900px;
+	margin:0 auto;
+    margin: 0 auto;
+}
+
+.page-inner-wrapper
+{
+    padding: 10px 10px;
+    background-color:#f7f7f7;
+}
+
+/********************************
+--> Main Container Div Property
+********************************/
+.left-container
+{
+    float: left;
+    padding: 0px 5px;
+}
+.right-container
+{
+    float: right;
+    padding: 0px 5px;
+}
+
+
+/*************************************
+--> Table Layout 
+**************************************/
+.basic-dashed-table
+{
+    border-collapse: collapse;
+    text-align: left;
+}
+.basic-dashed-table tr
+{
+    border-collapse: collapse;
+}
+.basic-dashed-table tr th
+{
+    padding: 12px 10px;
+    border-bottom:2px solid #595959;
+    background-color:#e6e6e6;
+    color:#595959;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+}
+.basic-dashed-table tr td
+{
+    padding: 8px 5px;
+    color:#595959;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+}
+.enable_border_bottom tr td
+{
+    border-bottom:2px solid #efefef;
+    background-color: #f5f5f5;
+}
+.basic-dashed-table tr td:first-child
+{
+    color:#595959;
+    font-weight: 800;
+}
+.basic-dashed-table tr.alt td
+{
+    background-color:#f0f0f0;
+}
+/*link bar*/
+.link-bar
+{
+    padding: 15px 20px;
+    text-align: right;
+
+}
+.link-bar a
+{
+    display: inline-block;
+    padding: 0 12px;
+    font-family: monospace;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+    border-right: 1px solid #333333;
+}
+.link-bar a:last-child
+{
+    border:none;
+}
