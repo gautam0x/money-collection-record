@@ -1,9 +1,9 @@
 <?php 
     //include all config files
-    require '/config_files/db_config.php';
-    require '/config_files/defined_function.php';
-    require '/config_files/session_tracking.php';
-    require '/config_files/timezone_config.php';
+    require 'config_files/db_config.php';
+    require 'config_files/defined_function.php';
+    require 'config_files/session_tracking.php';
+    require 'config_files/timezone_config.php';
 ?>
 
 <!doctype html>
@@ -83,7 +83,7 @@
                         ?>
 
                         <tr class="<?php echo $tr_class_alter ; ?>">
-                            <td><a href="person.php?id=<?php echo $row['id']; ?>"> <?php echo $row['name'] ;?></a></td>
+                            <td><a target="_blank"  href="client_profile.php?id=<?php echo $row['id']; ?>"> <?php echo $row['name'] ;?></a></td>
                             <td><?php echo $row['information'] ; ?></td>
                             <td><?php echo rearr_date($row['join_date']) ; ?></td>
                             <td><?php if(date('Y-m-d') == $row['last_update']){ echo '<span style=color:green>Today</span>';} else{echo rearr_date($row['last_update']) ;} ?></td>

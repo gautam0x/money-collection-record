@@ -1,7 +1,7 @@
 <?php 
     //include all config files
-    require '/config_files/db_config.php' ;
-    require '/config_files/session_tracking.php' ;
+    require 'config_files/db_config.php' ;
+    require 'config_files/session_tracking.php' ;
 ?>
 
 <!doctype html>

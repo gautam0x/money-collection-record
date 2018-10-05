@@ -1,9 +1,9 @@
 <?php 
     //include all config files
-    require '/config_files/db_config.php';
-    require '/config_files/defined_function.php';
-    require '/config_files/session_tracking.php';
-    require '/config_files/timezone_config.php';
+    require 'config_files/db_config.php';
+    require 'config_files/defined_function.php';
+    require 'config_files/session_tracking.php';
+    require 'config_files/timezone_config.php';
 ?>
 
 <!doctype html>
@@ -215,7 +215,7 @@ $date = $date_year."-".$date_month."-".$date_day;
                     ?>
                     
                     <tr class="<?php echo $tr_class_alter ; ?>">
-                        <td><a href="person.php?id=<?php echo $row['id']; ?>"> <?php echo $row['name'].$account_type ;?></a></td>
+                        <td><a target="_blank"  href="client_profile.php?id=<?php echo $row['id']; ?>"> <?php echo $row['name'].$account_type ;?></a></td>
                         <td><?php echo $row['information'] ; ?></td>
                         <td><?php echo rearr_date($date) ; ?></td>
                         <td><img src="<?php echo $image_icon ; ?>" /></td>

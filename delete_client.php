@@ -1,9 +1,9 @@
 <?php 
     //include all config files
-    require '/config_files/db_config.php';
-    require '/config_files/defined_function.php';
-    require '/config_files/session_tracking.php';
-    require '/config_files/timezone_config.php';
+    require 'config_files/db_config.php';
+    require 'config_files/defined_function.php';
+    require 'config_files/session_tracking.php';
+    require 'config_files/timezone_config.php';
 ?>
 
 <!doctype html>
