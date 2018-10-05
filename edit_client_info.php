@@ -113,7 +113,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['form_condition']))
 		<center>
 			<div id="alertBox"><?php echo $alert_msg; ?></div>
             
-			<form onsubmit="return confirm('Do you Want To Re-Update')"  method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="forum-medium-input >
+			<form onsubmit="return confirm('Do you Want To Re-Update')"  method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="forum-medium-input" >
 			<input name="form_condition" type="hidden" value="1" />
 			<input name="id" type="hidden" value="<?php echo $id ?>" />
 			<input name="old_name" type="hidden" value="<?php echo $new_client_name ?>" />
