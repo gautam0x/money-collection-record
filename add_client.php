@@ -88,7 +88,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['forum_condition'] ))
 		$flag = 0;
 	}
 	if($flag ==1)
-	{	
+	{
 		// Add New Row into Master table
 		$sql= "INSERT INTO peoples (name ,information ,join_date ,last_update ,total_balance,account_type,loan_amount) VALUES('$name','$information','$date','$date',$collected_amount,'$account_type',$loan_amount)";
 		if($conn->query($sql))
@@ -140,7 +140,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['forum_condition'] ))
 		
 			<div id="alertBox"><?php echo $alert_msg; ?></div>
             
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="forum-medium-input">
+            <form onsubmit="return confirm('Are You Confirm To Submit')" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="forum-medium-input">
 			<input type="hidden" name="forum_condition" value="1"/>
             <table class="forum-holder-table">
                 <tr>
