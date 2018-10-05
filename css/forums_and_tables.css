@@ -253,6 +253,10 @@ Basic form style to take data as input
     margin-right: 40px;
     text-align:right;
 }
+.date-dropdown-option-holder  form
+{
+    display: inline-block;
+}
 .date-dropdown-option-holder * select
 {      
     padding:3px 5px;

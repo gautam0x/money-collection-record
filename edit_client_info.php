@@ -106,25 +106,25 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['form_condition']))
     
     <div class="container-box-wrapper">
         <div class="container-box-header">
-            Update Client Information
+            Edit Client Information
         </div>
         
         <div class="container-box-body">
 		<center>
 			<div id="alertBox"><?php echo $alert_msg; ?></div>
             
-			<form onsubmit="return confirm('Do you Want To Re-Update')"  method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >
+			<form onsubmit="return confirm('Do you Want To Re-Update')"  method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="forum-medium-input >
 			<input name="form_condition" type="hidden" value="1" />
 			<input name="id" type="hidden" value="<?php echo $id ?>" />
 			<input name="old_name" type="hidden" value="<?php echo $new_client_name ?>" />
 			<table class="forum-holder-table">
 				<tr>
-					<td width="50%"> Name</td>
-					<td width="50%"><input class="medium-width" name="new_name" type="text" value="<?php echo $new_client_name; ?>" /></td>
+					<td><label>Name</label></td>
+					<td><input class="medium-width" name="new_name" type="text" value="<?php echo $new_client_name; ?>" /></td>
 				</tr>
 				<tr>
-					<td width="50%">Information</td>
-					<td width="50%"><input class="medium-width" maxlength="35" name="information" type="text" value="<?php echo $information; ?>" /></td>
+					<td><label>Information</label></td>
+					<td><input class="medium-width" maxlength="35" name="information" type="text" value="<?php echo $information; ?>" /></td>
 				</tr>
 				<tr>
 					<td></td>
