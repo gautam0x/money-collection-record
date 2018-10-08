@@ -13,7 +13,7 @@ CREATE TABLE staff
 );
 
 /* Table to record clients data */
-CREATE TABLE peoples
+CREATE TABLE client_details
 (
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	name VARCHAR(25) NOT NULL ,
@@ -24,3 +24,15 @@ CREATE TABLE peoples
 	loan_amount DECIMAL NOT NULL,
 	total_balance DECIMAL NOT NULL
 );
+
+/*
+Indivisual table for each client will be created 
+on User action perform
+
++---------------+-----------------+
+|  Date         |  Amount         |
++---------------+-----------------+
+|               |                 |
++---------------------------------+
+
+*/
