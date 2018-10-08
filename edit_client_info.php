@@ -46,7 +46,7 @@ $alert_msg = "";
 if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id']))
 {
     $id     = htmlspecialchars($_GET['id']);
-    $sql    = "SELECT name,information FROM peoples WHERE id=$id";
+    $sql    = "SELECT name,information FROM client_details WHERE id=$id";
     $result = $conn->query($sql);
     
     if($result->num_rows > 0)
@@ -72,7 +72,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['form_condition']))
 	$new_table_name	= find_indivisual_table_name($new_client_name , $id);
 
 	// Update Master Table Record
-	$sql = "UPDATE peoples SET name = '$new_client_name' , information = '$information' WHERE id = $id ";
+	$sql = "UPDATE client_details SET name = '$new_client_name' , information = '$information' WHERE id = $id ";
 	if($conn->query($sql))
 	{
 		// if new- name is same as older-name we dont need to change indivisual table name

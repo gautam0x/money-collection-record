@@ -92,7 +92,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['id']) && isset($_POST['
 			$total_balance	= $result->fetch_array()[0];
 			
 			// insert total SUM of amount to the master record
-			if($conn->query("UPDATE peoples SET total_balance = $total_balance , last_update = '$date' WHERE id = $id"))
+			if($conn->query("UPDATE client_details SET total_balance = $total_balance , last_update = '$date' WHERE id = $id"))
 			{
 				$alert_msg = "<div class='sucess-msg-alert'>Your Amount Has Been Updated </div>";
 			}
@@ -121,7 +121,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['id']) && isset($_POST['
 <div class="navbar">
 <ul>
     <li><a href="index.php">							Home</a></li>
-    <li><a href="add_client.php">						Add peoples</a></li>
+    <li><a href="add_client.php">						Add Client</a></li>
     <li><a class="active" href="update_balance.php">	Update Balance </a></li>
     <li><a href="delete_client.php">					Delete People</a></li>
 </ul>
@@ -241,7 +241,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['id']) && isset($_POST['
 
 			<?php
 			// Fetch MySQL row data from Master table
-			$sql = "SELECT id,name,information,last_update,account_type FROM peoples ORDER BY last_update desc";
+			$sql = "SELECT id,name,information,last_update,account_type FROM client_details ORDER BY last_update desc";
 			$result = $conn->query($sql);
 			$total_collection = 0;
 			

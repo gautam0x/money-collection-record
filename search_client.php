@@ -84,7 +84,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['search_data']) )
 
                 <?php
                 // Get data from master Table Record
-                $sql = "SELECT * FROM peoples WHERE name LIKE '%$search_data%' ORDER BY last_update desc";
+                $sql = "SELECT * FROM client_details WHERE name LIKE '%$search_data%' ORDER BY last_update desc";
                 $result = $conn->query($sql);
 
                 if($result->num_rows > 0)

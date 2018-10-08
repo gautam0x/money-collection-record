@@ -183,7 +183,7 @@ $date = $date_year."-".$date_month."-".$date_day;
 
             <?php
             // Fetch MySQL row data from table
-            $sql = 'SELECT id,name,information,last_update,account_type FROM peoples ORDER BY last_update desc';
+            $sql = 'SELECT id,name,information,last_update,account_type FROM client_details ORDER BY last_update desc';
             $result = $conn->query($sql);
 
             if($result->num_rows > 0)

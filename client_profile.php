@@ -41,7 +41,7 @@
 
         if($flag == 1)
         {
-            $sql 	= "SELECT * FROM peoples WHERE id = $id";
+            $sql 	= "SELECT * FROM client_details WHERE id = $id";
             $result = $conn->query($sql);
             $row	= $result->fetch_assoc();
 

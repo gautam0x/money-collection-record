@@ -65,7 +65,7 @@
 
 				<?php
 				// Fetch MySQL row data from master table
-				$sql = 'SELECT * FROM peoples ORDER BY name';
+				$sql = 'SELECT * FROM client_details ORDER BY name';
 				$result = $conn->query($sql);
 
 				if($result->num_rows > 0)

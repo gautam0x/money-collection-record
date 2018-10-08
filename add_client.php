@@ -90,7 +90,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['forum_condition'] ))
 	if($flag ==1)
 	{
 		// Add New Row into Master table
-		$sql= "INSERT INTO peoples (name ,information ,join_date ,last_update ,total_balance,account_type,loan_amount) VALUES('$name','$information','$date','$date',$collected_amount,'$account_type',$loan_amount)";
+		$sql= "INSERT INTO client_details (name ,information ,join_date ,last_update ,total_balance,account_type,loan_amount) VALUES('$name','$information','$date','$date',$collected_amount,'$account_type',$loan_amount)";
 		if($conn->query($sql))
 		{
 			//If new person added than create indivisual table for that person

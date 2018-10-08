@@ -73,7 +73,7 @@
 
                 <?php
                 // Fetch data from master Table Record
-                $sql = "SELECT * FROM peoples WHERE account_type = 'loan' ORDER BY last_update desc";
+                $sql = "SELECT * FROM client_details WHERE account_type = 'loan' ORDER BY last_update desc";
                 $result = $conn->query($sql);
 
                 if($result->num_rows > 0)

@@ -68,7 +68,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['confirm']) )
 	{
 		$table_name  = find_indivisual_table_name($name , $id);
 		
-		$sql_1 = "DELETE FROM peoples WHERE id = $id "; //delete master record
+		$sql_1 = "DELETE FROM client_details WHERE id = $id "; //delete master record
 		$sql_2 = "DROP TABLE $table_name ";             //delete indivisual table
 	
 		if($conn->query($sql_1) && $conn->query($sql_2)) 
