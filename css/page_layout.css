@@ -5,7 +5,7 @@
 @import "custom_font/rules.css";
 
 /************************************************************
-This stylesheet contains 
+This stylesheet contains
 
 --> Body Layout Structure
 --> Header Design
@@ -93,7 +93,7 @@ a
 }
 
 /********************************
---> Content Area 
+--> Content Area
 ********************************/
 .content-area-wrapper
 {
@@ -102,7 +102,7 @@ a
 	padding :0;
 }
 .content-area
-{	
+{
     background-color:#d4d4d4;
     background-image: url('../image/rupee.jpg');
     margin: 0 auto;
@@ -211,12 +211,14 @@ a
 }
 .warning-msg-alert
 {
-    background-color:#d6e9c6;
-    padding: 6px 0px;
-    color:#3c763d;
-    border:2px solid #afd491;
+    padding: 3px 0px;
+    margin: 10px 30px;
+		border:2px solid #e1cda2;
     border-radius: 6px;
-    font-family: sans-serif;
+		background-color:#f8edba;
+		color:#9e6d5b;
+    font-family:cursive;
+    font-weight: 400;
 }
 .failure-msg-alert
 {
