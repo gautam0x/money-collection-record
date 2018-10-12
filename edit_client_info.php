@@ -1,4 +1,4 @@
-<?php 
+<?php
     //include all config files
     require 'config_files/db_config.php';
     require 'config_files/defined_function.php';
@@ -48,12 +48,12 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id']))
     $id     = htmlspecialchars($_GET['id']);
     $sql    = "SELECT name,information FROM client_details WHERE id=$id";
     $result = $conn->query($sql);
-    
+
     if($result->num_rows > 0)
     {
         $row = $result->fetch_assoc() ;
         $old_client_name     = $row['name']; // take backup to rename indivisual table
-        $new_client_name     = $row['name']; 
+        $new_client_name     = $row['name'];
         $information         = $row['information'];
     }
 }
@@ -83,7 +83,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['form_condition']))
 		// else change indivisual table name
 		else
 		{
-			$sql = "RENAME TABLE $old_table_name TO $new_table_name"; 
+			$sql = "RENAME TABLE $old_table_name TO $new_table_name";
 			if($conn->query($sql))
 				$alert_msg = "<div class='sucess-msg-alert'>Data Inserted Sucessfully</div>";
 			else
@@ -103,24 +103,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['form_condition']))
 <div class="content-area-wrapper" >
 <div class="content-area" >
 <div class="content-holder-min-width">
-    
+
     <div class="container-box-wrapper">
         <div class="container-box-header">
             Edit Client Information
         </div>
-        
+
         <div class="container-box-body">
 		<center>
 			<div id="alertBox"><?php echo $alert_msg; ?></div>
-            
-			<form onsubmit="return confirm('Do you Want To Re-Update')"  method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="forum-medium-input" >
+
+			<form onsubmit="return validateForm()"  method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="forum-medium-input" >
 			<input name="form_condition" type="hidden" value="1" />
 			<input name="id" type="hidden" value="<?php echo $id ?>" />
 			<input name="old_name" type="hidden" value="<?php echo $new_client_name ?>" />
 			<table class="forum-holder-table">
 				<tr>
 					<td><label>Name</label></td>
-					<td><input class="medium-width" name="new_name" type="text" value="<?php echo $new_client_name; ?>" /></td>
+					<td><input id="nameInputBoxSelector" class="medium-width" name="new_name" type="text" value="<?php echo $new_client_name; ?>" /></td>
 				</tr>
 				<tr>
 					<td><label>Information</label></td>
@@ -135,12 +135,37 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['form_condition']))
 		</center>
         </div>
     </div>
-    
-    
-</div> 
+
+
 </div>
 </div>
-  
+</div>
+
+
+<script type="text/javascript">
+function validateForm()
+{
+  var nameInputBoxObj = document.getElementById("nameInputBoxSelector");
+
+  // check input name string before submit the form
+  // Name caontains only A-Z ,a-z ,0-9 and does not contains special characters
+  var inputString     = nameInputBoxObj.value;
+  var outputStringObj = inputString.match(/[a-zA-z0-9 ]+$/ig);
+  var outputString    = String(outputStringObj);
+  if(inputString.length != outputString.length)
+  {
+    document.getElementById("alertBox").innerHTML = 'Name does not Contains special character';
+    document.getElementById("alertBox").className = 'warning-msg-alert';
+    nameInputBoxObj.style.border = "1px solid red";
+    return false;
+  }
+  else
+  {
+    return confirm('Are You Confirm To Submit');
+  }
+}
+</script>
+
 
 <!--**********************************
 >>>>>>>>>   Footer Area  <<<<<<<<<<<

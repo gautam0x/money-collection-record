@@ -1,4 +1,4 @@
-<?php 
+<?php
     //include all config files
     require 'config_files/db_config.php';
     require 'config_files/defined_function.php';
@@ -49,8 +49,8 @@ $alert_msg = "";
 $date = "";
 $flag = 1 ;
 if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['forum_condition'] ))
-{ 
-	///String Type Data 
+{
+	///String Type Data
 	$name             = htmlspecialchars($_GET['name']);
 	$information      = htmlspecialchars($_GET['information']);
 	$account_type     = htmlspecialchars($_GET['account_type']);
@@ -69,7 +69,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['forum_condition'] ))
 			break;
 		}
 	}
-	
+
 	// Verify (date) variables and merge it to single value
 	if(($year > 1988 && $year <2080)&&($month>=1 && $month<=12)&&($day>=1 && $day<=31) && $flag == 1 )
 	{
@@ -80,7 +80,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['forum_condition'] ))
 		$alert_msg = "<div class='failure-msg-alert'>Date data was wrong</div>";
 		$flag = 0;
 	}
-	
+
 	// Cheak the (amount) variable is numeric or not
 	if( (!is_numeric($collected_amount) || !is_numeric($loan_amount) ) && $flag == 1)
 	{
@@ -96,7 +96,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['forum_condition'] ))
 			//If new person added than create indivisual table for that person
 			$current_id = $conn->insert_id;
 			$table_name = find_indivisual_table_name($name , $current_id);
-			
+
 			$sql = "CREATE TABLE $table_name (date DATE NOT NULL, amount FLOAT NOT NULL)";
 			if($conn->query($sql))
 			{
@@ -130,17 +130,17 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['forum_condition'] ))
 <div class="content-area-wrapper" >
 <div class="content-area" >
 <div class="content-holder-min-width">
-    
+
     <div class="container-box-wrapper">
         <div class="container-box-header">
             Add Person
         </div>
-        
+
         <div class="container-box-body">
-		
+
 			<div id="alertBox"><?php echo $alert_msg; ?></div>
-            
-            <form onsubmit="return confirm('Are You Confirm To Submit')" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="forum-medium-input">
+
+            <form onsubmit="return validateForm()" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="forum-medium-input">
 			<input type="hidden" name="forum_condition" value="1"/>
             <table class="forum-holder-table">
                 <tr>
@@ -148,8 +148,8 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['forum_condition'] ))
                         <label>Name :</label>
                     </td>
                     <td>
-                        <input name="name" type="text" />
-                    </td>                    
+                        <input id="nameInputBoxSelector" name="name" type="text" />
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -157,7 +157,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['forum_condition'] ))
                     </td>
                     <td>
                         <input name="information" type="text" />
-                    </td>                    
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -238,7 +238,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['forum_condition'] ))
                             <option value="2029">2029</option>
                             <option value="2030">2030</option>
                         </select>
-                    </td>                    
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -249,7 +249,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['forum_condition'] ))
                             <option  value="collection">collection</option>
                             <option  value="loan">loan</option>
                         </select>
-                    </td>                    
+                    </td>
                 </tr>
                 <tr id="loanTableRowSelector">
                     <td>
@@ -257,7 +257,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['forum_condition'] ))
                     </td>
                     <td>
                         <input id="loanInputBoxSelector" placeholder="Loan amount" name="loan_amount" type="number" />
-                    </td>                
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -278,12 +278,36 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['forum_condition'] ))
             </form>
         </div>
     </div>
-    
-    
-</div> 
+
+
 </div>
 </div>
-    
+</div>
+
+<script type="text/javascript">
+function validateForm()
+{
+  var nameInputBoxObj = document.getElementById("nameInputBoxSelector");
+
+  // check input name string before submit the form
+  // Name caontains only A-Z ,a-z ,0-9 and does not contains special characters
+  var inputString     = nameInputBoxObj.value;
+  var outputStringObj = inputString.match(/[a-zA-z0-9 ]+$/ig);
+  var outputString    = String(outputStringObj);
+  if(inputString.length != outputString.length)
+  {
+    document.getElementById("alertBox").innerHTML = 'Name does not Contains special character';
+    document.getElementById("alertBox").className = 'warning-msg-alert';
+    nameInputBoxObj.style.border = "1px solid red";
+    return false;
+  }
+  else
+  {
+    return confirm('Are You Confirm To Submit');
+  }
+}
+</script>
+
 <script type="text/javascript">
 //Get Table Row Which is to be display:none
 var loanTableRowObj      = document.getElementById("loanTableRowSelector");
@@ -291,7 +315,7 @@ var loanTableRowObj      = document.getElementById("loanTableRowSelector");
 //Get amount box to set Values onChange action
 var loanInputBoxObj    = document.getElementById("loanInputBoxSelector");
 var collectInputBoxObj = document.getElementById("collectInputBoxSelector");
-    
+
 //If browser support javascript then hide the row using JS
 loanTableRowObj.style.display = "none" ;
 loanInputBoxObj.value = 0 ;
@@ -300,7 +324,7 @@ loanInputBoxObj.value = 0 ;
 function box_action()
 {
     var select = document.getElementById("accountTypeDropdownSelector");
-    
+
     if(select.value == "loan")
     {
         loanTableRowObj.style.display = "";
@@ -317,7 +341,7 @@ function box_action()
 </script>
 
 <script type="text/javascript">
-// Script To Get Date Data From PHP 
+// Script To Get Date Data From PHP
 // and Assign that value to index of dropdown box
 
 var day     = "<?php echo date('d') ?>";
@@ -330,7 +354,7 @@ var yearOptionObj   =document.getElementById('yearOptionSelector');
 
 //create a funtion which accept OptionObj & value as parameter
 function changeOptionIndex(optionObj , valueToChange)
-{    
+{
     var optionArray = optionObj.options;
     // Loop to check dataTchange exist on which Index
     for(var i=0 ; i<optionArray.length ; i++)
