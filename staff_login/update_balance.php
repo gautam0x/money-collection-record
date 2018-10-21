@@ -222,40 +222,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['id']) && isset($_POST['
 </div>
 
 
-
-<script type="text/javascript">
-// Script To Get Date Data From PHP 
-// and Assign that value to index of dropdown box
-
-var day		= "<?php echo $date_day ?>";
-var month	= "<?php echo $date_month ?>";
-var year	= "<?php echo $date_year ?>";
-
-var dayOptionObj    =document.getElementById('dayOptionSelector');
-var monthOptionObj  =document.getElementById('monthOptionSelector');
-var yearOptionObj   =document.getElementById('yearOptionSelector');
-
-//create a funtion which accept OptionObj & value as parameter
-function changeOptionIndex(optionObj , valueToChange)
-{    
-    var optionArray = optionObj.options;
-    // Loop to check dataTchange exist on which Index
-    for(var i=0 ; i<optionArray.length ; i++)
-    {
-        if(optionArray[i].value == valueToChange)
-        {
-            optionObj.selectedIndex = i ;
-            break;
-        }
-    }
-}
-
-changeOptionIndex(dayOptionObj , day);
-changeOptionIndex(monthOptionObj , month);
-changeOptionIndex(yearOptionObj , year);
-</script>
-
-
 <!--**********************************
 >>>>>>>>>   Footer Area  <<<<<<<<<<<
 ************************************-->
