@@ -1,14 +1,48 @@
 <?php
 
+// Every page require to have assigned value to session "username" to work 
+// if session "username" isn't assigned then it redirect to login page
+
 session_start();
-// For staff Login We Only need to set SEssion
-// Cookie is no necessary anymore
 
-// Condition to check session fafter each page refreshment
+/***********************************************************************
+Condition 1 : If older cookie found from last login
 
-if(!isset($_SESSION['staff_username']) && $_SERVER['PHP_SELF'] != "/collection_money/staff_login/login.php")
+session "username" = False
+cookie 	"username" = True
+
+Then lets verify password from datatbase using older cookie data
+if it's ok then set session "username"
+***********************************************************************/
+
+if(!isset($_SESSION['username']) && isset($_COOKIE['username']))
 {
-	header("location:login.php");
+	$sql	= "SELECT password FROM admin WHERE username = '".$_COOKIE['username']."' ";
+	$result	= $conn->query($sql);
+	$row	= $result->fetch_assoc(); 
+	
+	if($_COOKIE['password'] == $row['password'])
+	{	
+		$_SESSION['username'] = $_COOKIE['username'];
+	}
+	else
+	{
+		die("Clear The Cookie And Re Login");
+	}
+}
+
+/***********************************************************************
+Condition 2 : If older cookie doesn't found and it's first time login
+
+cookie 	"username" = False
+and page is not login.php
+
+Redirect the url to login page
+***********************************************************************/
+
+elseif(!isset($_COOKIE['username']) && !strpos($_SERVER['PHP_SELF'],'login.php'))
+{
+	header('location:login.php');
 }
 
 ?>
