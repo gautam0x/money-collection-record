@@ -5,7 +5,7 @@
 @import "custom_font/rules.css";
 
 /************************************************************
-This stylesheet contains 
+This stylesheet contains
 
 --> Body Layout Structure
 --> Header Design
@@ -47,6 +47,7 @@ a
 	color:#222222;
 }
 
+
 /********************************
 --> Header Design
 ********************************/
@@ -61,14 +62,12 @@ a
 {
     padding: 20px 60px;
 	background-color:#551141;
-	border-top-left-radius: 6px;
-	border-top-right-radius: 6px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
 	text-align: center;
 }
 .header-body
-{
-    /*--No Assign--*/
-}
+{}
 
 /********************************
 --> Footer Design
@@ -84,8 +83,8 @@ a
 {
     padding: 20px 20px;
     border-top: 8px solid #4d0026;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 	background-color:#551141;
     text-align: left;
 	font-size: 17px;
@@ -93,7 +92,7 @@ a
 }
 
 /********************************
---> Content Area 
+--> Content Area
 ********************************/
 .content-area-wrapper
 {
@@ -102,7 +101,7 @@ a
 	padding :0;
 }
 .content-area
-{	
+{
     background-color:#d4d4d4;
     background-image: url('../image/rupee.jpg');
     margin: 0 auto;
@@ -119,7 +118,9 @@ a
     background-size: 120px;
 }
 
-/*---Width fix of content holder---*/
+/********************************
+--> Content Holder
+*********************************/
 .content-holder-min-width
 {
     width: 500px;
@@ -138,7 +139,6 @@ a
 {
     padding: 0;
     margin: 0;
-    opacity: 1;
 }
 .container-box-header
 {
@@ -152,10 +152,11 @@ a
 }
 .container-box-body
 {
-    background-color:#d9d9d9;
-    background-image: linear-gradient(-45deg,#e7e4e4,#d9d9d9);
-    padding: 20px 20px;
+    padding: 15px 15px;
+	border-radius: 3px;
     box-shadow: 0px 0px 10px 0px #a8a8a8;
+	box-shadow:0px 0px 10px 0px #a7a7a7;
+    background-image: linear-gradient(-45deg,#e6e6e6,#d6d6d6);
 }
 .background-disable
 {
@@ -184,7 +185,7 @@ a
 }
 .container-box-link-bar a.active , .container-box-link-bar a.active:hover
 {
-    background-color:#d9d9d9;
+	background-color:#d9d9d9;
     background-image: linear-gradient(0deg, #d9d9d9,#b3b3b3);
     padding-top:16px;
     color: #4d0026;
@@ -192,7 +193,7 @@ a
 .container-box-link-bar a:hover
 {
     background-color:#941e59;
-    background-image: linear-gradient(90deg,#7f1a4d, #941e59);
+    background-image:linear-gradient(90deg,#7f1a4d, #941e59);
 }
 
 /***************************
@@ -211,12 +212,14 @@ a
 }
 .warning-msg-alert
 {
-    background-color:#d6e9c6;
-    padding: 6px 0px;
-    color:#3c763d;
-    border:2px solid #afd491;
+    padding: 3px 0px;
+    margin: 10px 30px;
+	border:2px solid #e1cda2;
     border-radius: 6px;
-    font-family: sans-serif;
+	background-color:#f8edba;
+	color:#9e6d5b;
+    font-family:cursive;
+    font-weight: 400;
 }
 .failure-msg-alert
 {

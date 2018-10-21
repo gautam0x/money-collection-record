@@ -12,6 +12,7 @@ a
 	text-decoration:none;
 }
 
+
 /********************************
 --> Page Wrapper
 ********************************/
@@ -27,6 +28,7 @@ a
     padding: 10px 10px;
     background-color:#f7f7f7;
 }
+
 
 /********************************
 --> Main Container Div Property
@@ -88,7 +90,11 @@ a
 {
     background-color:#f0f0f0;
 }
-/*link bar*/
+
+
+/****************************
+--> link bar
+****************************/
 .link-bar
 {
     padding: 15px 20px;

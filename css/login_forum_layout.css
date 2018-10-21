@@ -25,7 +25,7 @@
     border:none;
 }
 
-.login-forum > input[type="text"] , .login-forum > input[type="password"]
+.login-forum input[type="text"] , .login-forum input[type="password"]
 {
     width:260px;
     padding: 12px 8px;
@@ -57,7 +57,7 @@
     background-color:#521433;
 }
 
-.login-forum > label
+.login-forum  label
 {
     margin: 5px 0px;    
     text-align: left;
