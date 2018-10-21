@@ -35,10 +35,12 @@ if(!isset($_SESSION['username']) && isset($_COOKIE['username']))
 Condition 2 : If older cookie doesn't found and it's first time login
 
 cookie 	"username" = False
+and page is not login.php
 
-Redirect the url to login page 
+Redirect the url to login page
 ***********************************************************************/
-elseif(!isset($_COOKIE['username']) && $_SERVER['PHP_SELF'] != "/collection_money/login.php" )
+
+elseif(!isset($_COOKIE['username']) && !strpos($_SERVER['PHP_SELF'],'login.php'))
 {
 	header('location:login.php');
 }
