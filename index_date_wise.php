@@ -1,4 +1,4 @@
-<?php 
+<?php
     //include all config files
     require 'config_files/db_config.php';
     require 'config_files/defined_function.php';
@@ -41,8 +41,8 @@
 </ul>
 </div>
 </div>
-    
-    
+
+
 <?php
 // set date variable after date forum submit
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['day']) && isset($_POST['month']) && isset($_POST['year']))
@@ -71,20 +71,20 @@ $date = $date_year."-".$date_month."-".$date_day;
 ***********************************-->
 <div class="content-area-wrapper" >
 <div class="content-area" >
-<div class="content-holder-max-width">    
-    
-    
+<div class="content-holder-max-width">
+
+
     <div class="container-box-wrapper">
-     
-        
+
+
         <div class="container-box-link-bar">
             <a href="index.php">Collected</a>
             <a href="index_loan.php" >Loan</a>
             <a href="index_date_wise.php" class="active">Date Wise</a>
         </div>
-        
-        <div class="container-box-body ">  
-            
+
+        <div class="container-box-body ">
+
             <div class="date-dropdown-option-holder">
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <select name="day" id="dayOptionSelector">
@@ -163,7 +163,7 @@ $date = $date_year."-".$date_month."-".$date_day;
             </select>
             <input type="submit" value="Change Date"/>
             </form>
-            
+
             <form  action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <input type="hidden" name="day" value="<?php echo date('d') ?>" />
             <input type="hidden" name="month" value="<?php echo date('m') ?>" />
@@ -188,52 +188,52 @@ $date = $date_year."-".$date_month."-".$date_day;
 
             if($result->num_rows > 0)
             {
-				$total_collection = 0;
-                $tr_class_alter = "type_1"; // class name alternating for each row to change color
-                while($row = $result->fetch_array())
-                {
-                    // Get Amount From Indivisual Table Of Each id
-                    $indivisual_table = find_indivisual_table_name($row['name'] , $row['id']) ;
-                    $sql_temp = "SELECT amount FROM $indivisual_table WHERE date = '$date' ";
+              $total_collection = 0;
+              $tr_class_alter = "type_1"; // class name alternating for each row to change color
+              while($row = $result->fetch_array())
+              {
+                  // Get Amount From Indivisual Table Of Each id
+                  $indivisual_table = find_indivisual_table_name($row['name'] , $row['id']) ;
+                  $sql_temp = "SELECT amount FROM $indivisual_table WHERE date = '$date' ";
 
-                    if($result_temp = $conn->query($sql_temp))
-                    {
-                        if($result_temp->num_rows == 1)
-                        {
-                            $row_temp   = $result_temp->fetch_assoc();
-                            $amount     = $row_temp['amount'];
-							$total_collection += $row_temp['amount'];
-                            $image_icon = "image/tick-icon.png";
-                            if($amount == 0) $image_icon = "image/cross-icon.png"; // Special Case For Zero Balance
-                        }
-                        else
-                        {
-                            $amount = 0;
-                            $image_icon = "image/cross-icon.png";
-                        }
-                    }
-                    
-                    // Loan Account Indicator
-                    if($row['account_type'] == 'loan') 
-                        $account_type = "<span style=color:red;> ( LOAN )</span>";
-                    else  
-                        $account_type = "" ;
+                  if($result_temp = $conn->query($sql_temp))
+                  {
+                      if($result_temp->num_rows == 1)
+                      {
+                          $row_temp   = $result_temp->fetch_assoc();
+                          $amount     = $row_temp['amount'];
+                          $total_collection += $row_temp['amount'];
+                          $image_icon = "image/tick-icon.png";
+                          if($amount == 0) $image_icon = "image/cross-icon.png"; // Special Case For Zero Balance
+                      }
+                      else
+                      {
+                          $amount = 0;
+                          $image_icon = "image/cross-icon.png";
+                      }
+                  }
 
-                    ?>
-                    
-                    <tr class="<?php echo $tr_class_alter ; ?>">
-                        <td><a target="_blank"  href="client_profile.php?id=<?php echo $row['id']; ?>"> <?php echo $row['name'].$account_type ;?></a></td>
-                        <td><?php echo $row['information'] ; ?></td>
-                        <td><?php echo rearr_date($date) ; ?></td>
-                        <td><img src="<?php echo $image_icon ; ?>" /></td>
-                        <td><?php echo $amount; ?></td>
-                    </tr>
+                  // Loan Account Indicator
+                  if($row['account_type'] == 'loan')
+                      $account_type = "<span style=color:red;> ( LOAN )</span>";
+                  else
+                      $account_type = "" ;
 
-                    <?php
-                    //Condition to change row color by altering TableRow class name in each loop
-                    if($tr_class_alter == "type_1")   $tr_class_alter = "type_2";  
-                    else                              $tr_class_alter = "type_1";
-                }
+                  ?>
+
+                  <tr class="<?php echo $tr_class_alter ; ?>">
+                      <td><a target="_blank"  href="client_profile.php?id=<?php echo $row['id']; ?>"> <?php echo $row['name'].$account_type ;?></a></td>
+                      <td><?php echo $row['information'] ; ?></td>
+                      <td><?php echo rearr_date($date) ; ?></td>
+                      <td><img src="<?php echo $image_icon ; ?>" /></td>
+                      <td><?php echo $amount; ?></td>
+                  </tr>
+
+                  <?php
+                  //Condition to change row color by altering TableRow class name in each loop
+                  if($tr_class_alter == "type_1")   $tr_class_alter = "type_2";
+                  else                              $tr_class_alter = "type_1";
+              }
 				// output total no. of rows in MYSQL Table
 				echo "<tr class='sucess-msg-row'>
 						<td colspan ='3'>".$result->num_rows." Person </td><td>Total amount</td>
@@ -243,22 +243,22 @@ $date = $date_year."-".$date_month."-".$date_day;
 			else
 			{
 				echo "<tr class='failure-msg-row'>
-						<td colspan='6'>Sorry no data found</td>
+						<td colspan='100%'>Sorry no data found</td>
 					</tr>";
 			}
 			?>
             </table>
         </div>
-        
+
     </div>
 
-</div> 
+</div>
 </div>
 </div>
 
 
 <script type="text/javascript">
-// Script To Get Date Data From PHP 
+// Script To Get Date Data From PHP
 // and Assign that value to index of dropdown box
 
 var day     = "<?php echo $date_day ?>";
@@ -271,7 +271,7 @@ var yearOptionObj   =document.getElementById('yearOptionSelector');
 
 //create a funtion which accept OptionObj & value as parameter
 function changeOptionIndex(optionObj , valueToChange)
-{    
+{
     var optionArray = optionObj.options;
     // Loop to check dataTchange exist on which Index
     for(var i=0 ; i<optionArray.length ; i++)

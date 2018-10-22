@@ -135,7 +135,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['search_data']) )
                 else
                 {
                     echo "<tr class='failure-msg-row'>
-                            <td colspan='6'>Sorry no data found</td>
+                            <td colspan='100%'>Sorry no data found</td>
                         </tr>";
                 }
                 ?>

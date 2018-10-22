@@ -179,7 +179,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['id']) && isset($_POST['
 
 					?>
 					
-					<form onsubmit="return confirm('Do you Want To Add')" method="post" action="<?php echo $_SERVER['PHP_SELF'] ; ?>">
+					<form method="post" action="<?php echo $_SERVER['PHP_SELF'] ; ?>">
 					<input type="hidden" name="id" value="<?php echo $row['id'] ; ?>" />
 					<input type="hidden" name="name" value="<?php echo urlencode($row['name']) //Name's white space replace by underscore ; ?>" />
 					<input type="hidden" name="date" value="<?php echo $date_session ; ?>" />
@@ -208,7 +208,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['id']) && isset($_POST['
 			else
 			{
 				echo "<tr class='failure-msg-row'>
-						<td colspan='6'>Sorry no data found</td>
+						<td colspan='100%'>Sorry no data found</td>
 					</tr>";
 			}
 			?>

@@ -139,7 +139,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['forum_condition'] ))
         <div class="container-box-body">
 
 			<div id="alertBox"><?php echo $alert_msg; ?></div>
-
+        <center>
             <form onsubmit="return validateForm()" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="forum-medium-input">
 			<input type="hidden" name="forum_condition" value="1"/>
             <table class="forum-holder-table">
@@ -276,6 +276,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['forum_condition'] ))
                 </tr>
             </table>
             </form>
+        </center>
         </div>
     </div>
 

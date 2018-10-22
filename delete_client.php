@@ -104,9 +104,9 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['response']))
 						</tr>
 
 						<?php
-                        //Condition to change row color by altering TableRow class name in each loop
-                        if($tr_class_alter == "type_1")   $tr_class_alter = "type_2";
-                        else                              $tr_class_alter = "type_1";
+              //Condition to change row color by altering TableRow class name in each loop
+              if($tr_class_alter == "type_1")   $tr_class_alter = "type_2";
+              else                              $tr_class_alter = "type_1";
 					}
 					echo "<tr class='sucess-msg-row'>
 							<td colspan ='5'>".$result->num_rows." Person </td>
@@ -115,12 +115,12 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['response']))
 				else
 				{
 					echo "<tr class='failure-msg-row'>
-							<td colspan='5'>Sorry no data found</td>
+							<td colspan='100%'>Sorry no data found</td>
 						</tr>";
 				}
 				?>
 			</table>
-        </div>
+      </div>
     </div>
 </div>
 </div>

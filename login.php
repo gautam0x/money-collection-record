@@ -1,4 +1,4 @@
-<?php 
+<?php
     //include all config files
     require 'config_files/db_config.php' ;
     require 'config_files/session_tracking.php' ;
@@ -40,20 +40,20 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['username']) && isset($_
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
     $password = md5($password);
-    
+
     $sql = "SELECT * FROM admin WHERE username = '$username' && password = '$password' ";
     $result = $conn->query($sql);
 
     if ($result->num_rows == 1)  //EVERYTHING IS OK INPUT MATCHED
-    {		
-		$time = time() + 36400;
-		setcookie('username',$username,$time);
-		setcookie('password',$password,$time);
-		header('location:index.php');
+    {
+  		$time = time() + 36400;
+  		setcookie('username',$username,$time);
+  		setcookie('password',$password,$time);
+  		header('location:index.php');
     }
     else
     {
-        $alert_msg = "<div class='failure-msg-alert'>No Match Found</div>";
+      $alert_msg = "<div class='failure-msg-alert'>No Match Found</div>";
     }
 }
 ?>
@@ -65,7 +65,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['username']) && isset($_
 <div class="content-area-wrapper" >
 <div class="content-area user-login-background" >
 <div class="content-holder-min-width">
-    
+
     <div class="container-box-wrapper">
 
         <div class="container-box-header">
@@ -80,10 +80,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['username']) && isset($_
                 <form method="POST" class="login-forum" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                     <label>Username</label>
                     <input name="username" type="text" />
-                    
+
                     <label>Password</label>
                     <input name="password" type="password" />
-                    
+
                     <input type="Submit" value="login"/>
                 </form>
             
@@ -92,13 +92,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['username']) && isset($_
         </div>
 
     </div>
-    
-</div> 
+
+</div>
 </div>
 </div>
 
 
- 
+
 <!--**********************************
 >>>>>>>>>   Footer Area  <<<<<<<<<<<
 ************************************-->
