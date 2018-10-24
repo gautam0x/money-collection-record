@@ -90,9 +90,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['id']) && isset($_POST['
 			// find total SUM of amount from indivisual table
 			$result			= $conn->query("SELECT SUM(amount) FROM $table_name");
 			$total_balance	= $result->fetch_array()[0];
+			// find last update from indivisual table
+			$result			= $conn->query("SELECT date FROM $table_name WHERE amount!=0 ORDER BY date DESC LIMIT 1");
+			$last_update	= $result->fetch_array()[0];
+			
 
 			// insert total SUM of amount to the master record
-			if($conn->query("UPDATE client_details SET total_balance = $total_balance , last_update = '$date' WHERE id = $id"))
+			if($conn->query("UPDATE client_details SET total_balance = $total_balance , last_update = '$last_update' WHERE id = $id"))
 			{
 				$alert_msg = "<div class='sucess-msg-alert'>Your Amount Has Been Updated </div>";
 			}
