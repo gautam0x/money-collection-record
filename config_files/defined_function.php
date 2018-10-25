@@ -33,11 +33,12 @@ function rearr_date($arg_date)
 
 
 /*****************************************************
-functon to convert default date format into Human
-Readable date format
+This function return array of string like 
+[year-month] to help fr extract data from indivisual
+table
 
-argument	--> 2017-08-21
-return		--> 21 Aug 2017
+argument	--> 2017-11-21 , 2018-02-02
+return		--> 2017-11 , 2017-12 , 2018-01 , 2018-02
 ******************************************************/
 function find_intermediate_year_month_array($beginning_date,$ending_date)
 {
